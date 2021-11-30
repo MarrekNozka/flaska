@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
+
+
 <body>
+<p>
+</p>
+
 
     <h1>Menu</h1>
 
     <a href="http://www.spseol.cz/">škola</a>
-    <a href="/">root</a>
-    <a href="/abc">abc</a>
+    <a href="{{ url_for('root') }}">root</a>
+    <a href="{{ url_for('abc') }}">abc</a>
+    <a href="/logout">logout</a>
 
     <h1>Data</h1>
 

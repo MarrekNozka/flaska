@@ -13,5 +13,27 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta adipisci eius cu
 
 <p>{{ pi }} {{odmocnina}} </p>
 
+<p><strong>{{ session.get('susenka') }}</strong></p>
+
+{% if 'user' in session %}
+  <p>Jsi přihlášen jako <strong>{{ session.get('user') }}</strong></p>
+  <p>Odhlas se <a href="{{ url_for('logout') }}">ZDE</a>.</p>
+{% else %}
+<form method='post'>
+  <p>
+    jmeno: <br>
+    <input type="text" name="jmeno"> <br>
+  </p>
+  <p>
+    heslo: <br>
+    <input type="password" name="heslo">
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+</form>
+{% endif %}
+
+
 
 {% endblock obsah %}
